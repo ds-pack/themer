@@ -1,9 +1,41 @@
-# Project Template
+# Themer
 
-Make sure to update this with the right documentation!
+A theme builder utility for constructing css-in-js theme objects.
 
-### Tools:
+## Installation:
 
-- Typescript
-- Babel
-- Jest
+```sh
+yarn add @ds-pack/themer
+```
+
+## Usage:
+
+```ts
+import themer from '@ds-pack/themer'
+
+let baseTheme = {
+  colors: {
+    primary: '$green.3',
+    green: ['greenyellow', 'lawngreen', 'limegreen', 'mediumspringgreen'],
+  },
+}
+
+let theme = themer(baseTheme)
+
+// theme === {
+//   colors: {
+//     primary: 'mediumspringgreen',
+//     green: [
+//       'greenyellow',
+//       'lawngreen',
+//       'limegreen',
+//       'mediumspringgreen'
+//     ]
+//   }
+// }
+```
+
+## Background:
+
+See my
+[blog post on computed theme](https://matthamlin.me/posts/2021/january/computed-theme).
